@@ -1,37 +1,38 @@
 # Daily planner (web)
 
+Self-contained Next.js app for Vercel. Schedule data lives in [`schedule/`](schedule/) inside this repo.
+
 Rigid weekly schedule viewer for **Africa/Lagos (WAT)**.
 
 ## Setup
 
 ```bash
-cd daily-planner/web
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Vercel
+
+Deploy **this directory** (`daily-planner/web`) as the project root. No parent-folder dependencies.
+
+`npm run build` runs `generate:ics` first and writes `public/Valentine_Weekly_Schedule.ics`.
+
 ## Routes
 
 - **/** — Today: current block, timeline, study summary
 - **/week** — Seven-day 24h grid
-- **Download .ics** — `Valentine_Weekly_Schedule.ics` for Google Calendar
+- **Download .ics** — Google Calendar import
 
-## Data
-
-Schedule blocks live in [`../schedule/`](../schedule/). Regenerate the calendar:
+## Regenerate calendar
 
 ```bash
-cd daily-planner
 npm run generate:ics
 ```
-
-The web app runs `sync:ics` before `dev` and `build` to refresh `public/Valentine_Weekly_Schedule.ics`.
 
 ## Tests
 
 ```bash
-cd daily-planner/web
 npm run test:schedule
 ```

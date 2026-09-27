@@ -20,18 +20,18 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@schedule": ["../schedule/index.ts"],
-      "@schedule/*": ["../schedule/*"]
+      "@schedule": ["./schedule/index.ts"],
+      "@schedule/*": ["./schedule/*"]
     }
   },
   "include": [
     "next-env.d.ts",
-    "../schedule/**/*.ts",
+    "schedule/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "../schedule/**/*.test.ts"]
+  "exclude": ["node_modules", "schedule/**/*.test.ts"]
 }
